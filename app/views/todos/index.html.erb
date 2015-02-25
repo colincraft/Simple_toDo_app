@@ -1,0 +1,15 @@
+   <% @todos.each do |f| %>
+   <li><%= f %>
+  <%= button_to "X", todo_path(f), :method => :delete %>
+   <% end %>
+</li>
+   <%= form_tag(todos_path) do %>
+     <p>
+      <%= label_tag(:task) %>
+      <%= text_field_tag(:task, nil, autofocus: true) %>
+    </p>
+     <%= submit_tag "Add"%>
+  <% end %>
+<p>
+  <%= link_to "Delete List", todos_path, method: "Delete" %>
+  </p>
